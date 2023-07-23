@@ -14,6 +14,9 @@ function Home(props) {
   const [name, setName] = useState("");
   const [searchClicked, setSearchClicked] = useState(false);
 
+
+  
+
   const fetchData = useCallback(() => {
     if (name !== "") {
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${ApiKey}&units=metric`)
@@ -60,8 +63,27 @@ function Home(props) {
 
   const imgURL = `https://openweathermap.org/img/wn/${data.ID}@2x.png`;
 
+  //************** */ data function ********************************
+
+  
+    const tdate = new Date();
+    const dd = tdate.getDate(); //day
+    const MM = tdate.getMonth(); //month
+    const yyyy = tdate.getFullYear(); //year
+    const todayDate = dd + "-" + (MM + 1) + "-" + yyyy;
+
+    
+
+
+
+
   return (
     <div className='container'>
+     <div className='container1'>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoaPKUppdj79Pd9ItFa4nP3nEcGDhWzSAj6A&usqp=CAU' alt='bannerimg'/>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFB9eM_gImASJ_AD4-vRe0KQwPUcoCRF_FTg&usqp=CAU' alt='bannerimg'/>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDgaqmPR6wsJx9Wa2OPxpaARbtXKdd7R5uLQ&usqp=CAU' alt='bannerimg'/>
+     </div>
       <div className='weather'>
         <div className='search'>
           <input
@@ -90,6 +112,7 @@ function Home(props) {
           </div>
           <h1>{data.celcius}°C</h1>
           <h2>{data.name}</h2>
+          <p>{todayDate}</p>
           <div className='details'>
             <div className='col'>
               <img src='https://cdn-icons-png.flaticon.com/128/481/481453.png' alt="humidity" />
@@ -109,8 +132,16 @@ function Home(props) {
           </div>
         </div>
       </div>
+      <div className='container2'>
+      <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFB9eM_gImASJ_AD4-vRe0KQwPUcoCRF_FTg&usqp=CAU' alt='bannerimg'/>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzrWYoAGakVcCjTw4cSQSDlt0AsVmfn5w42w&usqp=CAU' alt='bannerimg'/>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkRDvCfxP2qGvrirVu4m1y0-wrxDvVlzi6aA&usqp=CAU' alt='bannerimg'/>
+        
+
+      </div>
     </div>
   );
 }
 
 export default Home;
+// https://github.com/akshitDhakad/weather-app.git

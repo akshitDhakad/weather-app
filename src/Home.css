@@ -6,7 +6,7 @@
 
 #input{
     border: 2px solid white;
-    background-color: skyblue;
+   
     opacity: 80%;
 }
 
@@ -21,4 +21,9 @@
     position: absolute;
     color: red;
     right: 80px;
+}
+
+
+body{
+    font-family: sans-serif;
 }

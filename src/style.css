@@ -1,15 +1,25 @@
 body{
-    margin: 0px;
-    padding: 0px;
-    background-color:rgb(116, 152, 225);
+    background-image: url("https://image.ibb.co/nk6wEb/snow.jpg");
+    background-size: cover;
+    background-position: center;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 0 20px;
+    
     
 }
 
 .container{
+    display: flex;
     width: 100%;
     height: 100vh;
-    background-color:rgb(116, 152, 225);
+    display: grid;
+
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
 }
 
 
@@ -22,13 +32,14 @@ body{
 }
 
 .weather{
-    width: 380px;
+    width: 80%;
     padding: 30px ;
     border-radius: 10px;
     margin: 50px auto;
-    background:linear-gradient(130deg,rgb(86,86,235),rgb(5,5,199));
+    background:linear-gradient(130deg,rgba(86, 86, 235, 0),rgba(5, 5, 199, 0.664));
     color: white;
     text-align: center;
+   
 }
 
 .search{
@@ -88,21 +99,27 @@ body{
     justify-content: space-between;
     padding: 0px 20px;
     margin-top: 50px;
+
 }
 
 .details .col{
+    flex-grow: 1;
     display: flex;
     align-items: center;
     text-align: left;
+    flex: 1;
+    justify-content: center;
+    flex-shrink: 1;
+    
 }
 
 .details .col img{
-    width: 45px;
+    width: 2.85rem;
     margin-right: 10px;
 }
 
 .humidity,.wind{
-    font-size: 27px;
+    font-size: 1.67rem;
 }
 .humidity p,.wind p{
     margin: 0px;
@@ -116,4 +133,59 @@ body{
 
 .image img{
     margin: auto;
+}
+
+
+
+
+
+.container1,
+.container2 {
+    height: 450px; /* Set the desired height for the containers */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.425);
+    display: grid;
+    grid-template-rows: repeat(5, 1fr); /* Create 5 equal-width columns */
+    gap: 5px;
+    padding: 10px;
+    
+}
+
+.container1 img,
+.container2 img {
+    max-width: 100%; 
+    max-height: 100%;
+    border-radius: 2px;
+}
+
+
+@media (max-width: 986px) {
+    body {
+        width: 100vw;  
+    }
+    .container{
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container1,.container2{
+        display: none;
+    }
+
+        
+    .weather{
+        
+        padding: 30px ;
+        border-radius: 10px;
+        margin: 50px auto;
+        background:linear-gradient(130deg,rgba(86, 86, 235, 0),rgba(5, 5, 199, 0.664));
+        color: white;
+        text-align: center;
+    
+    }
+
+
 }
